@@ -81,13 +81,16 @@ public enum Salas {
         System.out.print("Quantas salas irão participar?");
         numSalas = sc.nextInt();
 
-        System.out.print("Quais salas? \n1-A 2-B 3-C 4-ETIM 5-ETEL 6-ETIQ");
-        for(int x = 0; x < numSalas; x++) {
-            sala = sc.nextInt();
-            participantes.add(gerarSalas().get(sala-1));
-        }
+        if(numSalas != 6) {
+            System.out.print("Quais salas? \n1-A 2-B 3-C 4-ETIM 5-ETEL 6-ETIQ");
+            for (int x = 0; x < numSalas; x++) {
+                sala = sc.nextInt();
+                participantes.add(gerarSalas().get(sala - 1));
+            }
+        }else
+            participantes.addAll(gerarSalas());
+
         gerarParticipantes(participantes);
-        printGrupos();
     }
 
 }
