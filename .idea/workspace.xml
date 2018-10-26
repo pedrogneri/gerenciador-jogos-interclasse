@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337db48e-b320-4acf-aa04-d942a9cf9612" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Salas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Salas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Times.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interclasse/interclasse/Times.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interclasse/Grupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Grupos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interclasse/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interclasse/Salas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Salas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,25 +21,25 @@
     <session id="1170890638">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.open.time.9" value="6" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1894" />
+          <entry key="java" value="9183" />
           <entry key="md" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1894" />
+          <entry key="JAVA" value="9183" />
           <entry key="Markdown" value="55" />
         </counts>
       </usages-collector>
@@ -67,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interclasse/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+            <state relative-caret-position="-13">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -76,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interclasse/Salas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="345">
+              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -85,11 +86,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/interclasse/Grupos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#231#232#0" expanded="true" />
+                <element signature="method#Grupos#1;class#Grupos#0" />
+                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#3206#3207#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/interclasse/Times.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="method#Times#1;class#Times#0" />
                 <element signature="e#1254#1255#0" expanded="true" />
@@ -137,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/interclasse/Test.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/interclasse/Salas.java" />
-        <option value="$PROJECT_DIR$/src/interclasse/Principal.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Times.java" />
+        <option value="$PROJECT_DIR$/src/interclasse/Principal.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Grupos.java" />
       </list>
     </option>
@@ -158,6 +160,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+              <item name="interclasse" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,30 +199,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-              <item name="interclasse" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540265253372" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540543612282" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -292,15 +294,15 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19527897" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17811158" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.1373494" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.27831325" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.15662651" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.10963856" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -389,24 +391,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interclasse/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="43" column="48" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interclasse/Salas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interclasse/Times.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+        <state relative-caret-position="405">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="method#Times#1;class#Times#0" />
             <element signature="e#1254#1255#0" expanded="true" />
@@ -415,13 +403,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/interclasse/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interclasse/Salas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/interclasse/Grupos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
+            <element signature="method#Grupos#1;class#Grupos#0" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3206#3207#0" expanded="true" />
           </folding>
         </state>
       </provider>

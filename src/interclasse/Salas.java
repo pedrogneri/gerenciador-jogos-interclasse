@@ -1,19 +1,15 @@
 package interclasse;
 import java.util.*;
 public enum Salas {
-    PRIMEIROS(1,"A","B"), SEGUNDOS(2,"C","D"), TERCEIROS(3,"E","F");
+    PRIMEIROS(1), SEGUNDOS(2), TERCEIROS(3);
 
     private int numSala;
-    private String grupoLetra1;
-    private String grupoLetra2;
     private List<String> salasParticipantes;
     private List<String> grupo1;
     private List<String> grupo2;
 
-    Salas(int numSala, String grupoLetra1, String grupoLetra2) {
+    Salas(int numSala) {
         this.numSala = numSala;
-        this.grupoLetra1 = grupoLetra1;
-        this.grupoLetra2 = grupoLetra2;
     }
 
     public List<String> getGrupo1() {
@@ -48,9 +44,9 @@ public enum Salas {
         setSalasParticipantes(participantes);
     }
 
-    private void montadorGrupos() {
+    public void montadorGrupos() {
         setGrupo1(getSalasParticipantes().size() == 4 ? Arrays.asList("","","","") : Arrays.asList("","",""));
-        setGrupo2(new ArrayList<>(3));
+        setGrupo2(new ArrayList<>());
 
         List<String> salas = new ArrayList<>();
         salas.addAll(getSalasParticipantes());
@@ -60,16 +56,12 @@ public enum Salas {
         for(int x = 0; x < getGrupo1().size(); x++)
             getGrupo1().set(x, salas.get(x));
 
-        salas.removeAll(getGrupo1());
-        getGrupo2().addAll(salas);
+        montadorGrupo2(salas);
     }
 
-    public void printGrupos() {
-        montadorGrupos();
-
-        System.out.println("Grupo " + this.grupoLetra1 + getGrupo1());
-        if(!getGrupo2().isEmpty())
-            System.out.println("Grupo " + this.grupoLetra2 + getGrupo2());
+    private void montadorGrupo2(List<String> salas){
+        salas.removeAll(getGrupo1());
+        setGrupo2(salas);
     }
 
     public void montarGruposParticipantes(){
