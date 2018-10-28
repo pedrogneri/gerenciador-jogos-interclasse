@@ -1,4 +1,5 @@
 package interclasse;
+import java.util.ArrayList;
 import java.util.List;
 public class Times {
     private String nome;
@@ -57,6 +58,8 @@ public class Times {
         setPontoProprio(pontoProprio);
         setPontoContra(pontoContra);
         setPontos(pontos);
+
+        List<Times> times = new ArrayList<Times>();
     }
 
     public void calculoSaldo() {

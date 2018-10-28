@@ -31,44 +31,23 @@ public class Grupos {
     public List<String> getGrupoA() {
         return grupoA;
     }
-    public void setGrupoA(List<String> grupoA) {
-        this.grupoA = grupoA;
-    }
     public List<String> getGrupoB() {
         return grupoB;
-    }
-    public void setGrupoB(List<String> grupoB) {
-        this.grupoB = grupoB;
     }
     public List<String> getGrupoC() {
         return grupoC;
     }
-    public void setGrupoC(List<String> grupoC) {
-        this.grupoC = grupoC;
-    }
     public List<String> getGrupoD() {
         return grupoD;
-    }
-    public void setGrupoD(List<String> grupoD) {
-        this.grupoD = grupoD;
     }
     public List<String> getGrupoE() {
         return grupoE;
     }
-    public void setGrupoE(List<String> grupoE) {
-        this.grupoE = grupoE;
-    }
     public List<String> getGrupoF() {
         return grupoF;
     }
-    public void setGrupoF(List<String> grupoF) {
-        this.grupoF = grupoF;
-    }
     public List<List>  getGrupos() {
         return grupos;
-    }
-    public void setGrupos(List<List>  grupos) {
-        this.grupos = grupos;
     }
     public List<List> getListaGrupos() {
         return listaGrupos;
@@ -111,24 +90,29 @@ public class Grupos {
             System.out.print("\nGrupo " + letras[x] + " " + getListaGrupos().get(x));
     }
 
-    public void selecionarGrupo(){
+    public Object salaSelecionada(int index1, int index2){
+        return getListaGrupos().get(index1).get(index2);
+    }
+
+    public String selecionarGrupo(){
         Scanner sc = new Scanner(System.in);
 
         for (int x=0; x < getListaGrupos().size(); x++)
             System.out.print("\nGrupo " + x + " " + getListaGrupos().get(x));
 
-        System.out.print("Qual grupo deseja selecionar?");
+        System.out.print("\nQual grupo deseja selecionar?");
         int indexGrupo = sc.nextInt();
 
         getListaGrupos().get(indexGrupo);
-        System.out.print("Qual sala deseja selecionar?");
+        System.out.print("\nQual sala deseja selecionar?");
 
         for (int x=0; x < getListaGrupos().get(indexGrupo).size(); x++)
-            System.out.print("\nSala " + x + " " + getListaGrupos().get(indexGrupo).get(x));
+            System.out.print("\nSala " + x + " " + salaSelecionada(indexGrupo, x));
 
         int indexSala = sc.nextInt();
 
-        System.out.print("Sala selecionada: " + getListaGrupos().get(indexGrupo).get(indexSala));
+        System.out.print("Sala selecionada: " + salaSelecionada(indexGrupo, indexSala));
+        return String.valueOf(salaSelecionada(indexGrupo, indexSala));
     }
 
 }
