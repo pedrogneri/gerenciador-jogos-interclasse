@@ -1,6 +1,6 @@
 package interclasse;
 import java.util.*;
-public class Grupos {
+public class Grupo {
     private List<List> grupos;
     private List<List> listaGrupos;
     private List<String> grupoA;
@@ -10,14 +10,14 @@ public class Grupos {
     private List<String> grupoE;
     private List<String> grupoF;
 
-    public Grupos() {
+    public Grupo() {
         this(new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(),
                 new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList());
     }
 
-    public Grupos(List<List>  grupos, List<List> listaGrupos, List<String> grupoA,
-                  List<String> grupoB, List<String> grupoC, List<String> grupoD,
-                  List<String> grupoE, List<String> grupoF) {
+    public Grupo(List<List>  grupos, List<List> listaGrupos, List<String> grupoA,
+                 List<String> grupoB, List<String> grupoC, List<String> grupoD,
+                 List<String> grupoE, List<String> grupoF) {
         this.grupos = grupos;
         this.listaGrupos = listaGrupos;
         this.grupoA = grupoA;
@@ -62,7 +62,7 @@ public class Grupos {
         adicionarGrupos(sala3);
 
         for(int x=0; x < getGrupos().size(); x++)
-           if(getGrupos().get(x).equals(Collections.emptyList())) getGrupos().remove(x);
+            if(getGrupos().get(x).equals(Collections.emptyList())) getGrupos().remove(x);
     }
 
     public void adicionarGrupos(Salas sala) {
@@ -116,5 +116,6 @@ public class Grupos {
     }
 
 }
+
 
 

@@ -1,18 +1,18 @@
 package interclasse;
 import java.util.ArrayList;
 import java.util.List;
-public class Times {
+public class Time {
     private String nome;
     private int saldo;
     private int pontos;
     private int pontoContra;
     private int pontoProprio;
 
-    public Times(){
+    public Time(){
         this("",0,0,0);
     }
 
-    public Times(String nome, int saldo, int pontoContra, int pontoProprio) {
+    public Time(String nome, int saldo, int pontoContra, int pontoProprio) {
         this.nome = nome;
         this.saldo = saldo;
         this.pontoContra = pontoContra;
@@ -59,7 +59,7 @@ public class Times {
         setPontoContra(pontoContra);
         setPontos(pontos);
 
-        List<Times> times = new ArrayList<Times>();
+        List<Time> times = new ArrayList<Time>();
     }
 
     public void calculoSaldo() {
@@ -69,10 +69,11 @@ public class Times {
     public void listar(){
         calculoSaldo();
         System.out.print("\nNome do time: " + getNome()
-        + "\nPontos proprios: " + getPontoProprio()
-        + "\nPontos contra: " + getPontoContra()
-        + "\nSaldo: " + getSaldo()
-        + "\nPontos: " + getPontos());
+                + "\nPontos proprios: " + getPontoProprio()
+                + "\nPontos contra: " + getPontoContra()
+                + "\nSaldo: " + getSaldo()
+                + "\nPontos: " + getPontos());
     }
 
 }
+
