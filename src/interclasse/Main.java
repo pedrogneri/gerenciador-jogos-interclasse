@@ -1,5 +1,4 @@
 package interclasse;
-
 import view.MainController;
 
 public class Main {

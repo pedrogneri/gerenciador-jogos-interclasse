@@ -84,35 +84,8 @@ public class Grupo {
         getListaGrupos().set(indice, getGrupos().get(indice));
     }
 
-    public void printGrupos() {
-        String[] letras = {"A","B","C","D","E","F"};
-        for(int x=0; x < getGrupos().size(); x++)
-            System.out.print("\nGrupo " + letras[x] + " " + getListaGrupos().get(x));
-    }
-
     public Object salaSelecionada(int index1, int index2){
         return getListaGrupos().get(index1).get(index2);
-    }
-
-    public String selecionarGrupo(){
-        Scanner sc = new Scanner(System.in);
-
-        for (int x=0; x < getListaGrupos().size(); x++)
-            System.out.print("\nGrupo " + x + " " + getListaGrupos().get(x));
-
-        System.out.print("\nQual grupo deseja selecionar?");
-        int indexGrupo = sc.nextInt();
-
-        getListaGrupos().get(indexGrupo);
-        System.out.print("\nQual sala deseja selecionar?");
-
-        for (int x=0; x < getListaGrupos().get(indexGrupo).size(); x++)
-            System.out.print("\nSala " + x + " " + salaSelecionada(indexGrupo, x));
-
-        int indexSala = sc.nextInt();
-
-        System.out.print("Sala selecionada: " + salaSelecionada(indexGrupo, indexSala));
-        return String.valueOf(salaSelecionada(indexGrupo, indexSala));
     }
 
 }
