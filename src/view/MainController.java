@@ -11,7 +11,10 @@ public class MainController {
     private Salas segundos = new Salas();
     private Salas terceiros = new Salas();
 
-    private Grupo grupos = new Grupo();
+    private Grupo futsal = new Grupo();
+    private Grupo volei = new Grupo();
+    private Grupo handebol = new Grupo();
+    private Grupo basquete = new Grupo();
 
     private List<String> salasPrimeiros = new ArrayList<>(6);
     private List<String> salasSegundos = new ArrayList<>(6);
@@ -71,7 +74,10 @@ public class MainController {
     private void initListeners() {
         //Button
         btnNext.addActionListener(new BtnNextListener());
+        btnNext.addActionListener(new limparButton());
         btnPrev.addActionListener(new BtnPrevListener());
+        btnPrev.addActionListener(new limparButton());
+
         salvarButton.addActionListener(new salvarButton());
         limparButton.addActionListener(new limparButton());
         //Checkbox
@@ -197,14 +203,22 @@ public class MainController {
             montarGruposAno(segundos, salasSegundos);
             montarGruposAno(terceiros, salasTerceiros);
 
-            grupos.montarGrupos(primeiros,segundos,terceiros);
+            String esporte = lbEsporte.getText();
 
-            lbArray.setText(String.valueOf(
-                    grupos.getListaGrupos().get(0) + " " + grupos.getListaGrupos().get(1) +
-                    " " + grupos.getListaGrupos().get(2)));
-            lbArray2.setText(String.valueOf(
-                    grupos.getListaGrupos().get(3) + " " + grupos.getListaGrupos().get(4) +
-                    " " + grupos.getListaGrupos().get(5)));
+            switch (esporte) {
+                case "Futsal":
+                    montarGruposEsporte(futsal);
+                    break;
+                case "Vôlei":
+                    montarGruposEsporte(volei);
+                    break;
+                case "Basquete":
+                    montarGruposEsporte(basquete);
+                    break;
+                case "Handebol":
+                    montarGruposEsporte(handebol);
+                    break;
+            }
 
             lbArray.setVisible(true);
             lbArray2.setVisible(true);
@@ -213,6 +227,17 @@ public class MainController {
         public void montarGruposAno(Salas salas, List<String> participantes) {
             salas.setSalasParticipantes(participantes);
             salas.montadorGrupos();
+        }
+
+        public void montarGruposEsporte(Grupo grupo){
+            grupo.montarGrupos(primeiros, segundos, terceiros);
+
+            lbArray.setText(String.valueOf(
+                    grupo.getListaGrupos().get(0) + " " + grupo.getListaGrupos().get(1) +
+                            " " + grupo.getListaGrupos().get(2)));
+            lbArray2.setText(String.valueOf(
+                    grupo.getListaGrupos().get(3) + " " + grupo.getListaGrupos().get(4) +
+                            " " + grupo.getListaGrupos().get(5)));
         }
     }
 

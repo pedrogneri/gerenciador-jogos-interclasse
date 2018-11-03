@@ -26,6 +26,7 @@ public class Home extends JFrame {
     private JPanel panelPrimeiros;
     private JPanel panelSegundos;
     private JPanel panelTerceiros;
+    //image
     private JLabel lbLogo;
 
     public Home() {

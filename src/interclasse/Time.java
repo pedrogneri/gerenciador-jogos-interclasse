@@ -58,21 +58,10 @@ public class Time {
         setPontoProprio(pontoProprio);
         setPontoContra(pontoContra);
         setPontos(pontos);
-
-        List<Time> times = new ArrayList<Time>();
     }
 
     public void calculoSaldo() {
         setSaldo(getPontoProprio() - getPontoContra());
-    }
-
-    public void listar(){
-        calculoSaldo();
-        System.out.print("\nNome do time: " + getNome()
-                + "\nPontos proprios: " + getPontoProprio()
-                + "\nPontos contra: " + getPontoContra()
-                + "\nSaldo: " + getSaldo()
-                + "\nPontos: " + getPontos());
     }
 
 }
