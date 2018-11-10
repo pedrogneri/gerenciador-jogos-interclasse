@@ -1,17 +1,15 @@
-package view;
+package view.home;
 import javax.swing.*;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class Home extends JFrame {
 
-    //Panel
+    //Panel principal
     private JPanel mainFrame;
     //Button
     private JButton btnNext;
     private JButton btnPrev;
     private JButton salvarButton;
-    private JButton limparButton;
+    private JButton mostrarButton;
     private JButton btnSelect1;
     private JButton btnClear1;
     private JButton btnSelect2;
@@ -48,8 +46,8 @@ public class Home extends JFrame {
     public JButton getSalvarButton() {
         return salvarButton;
     }
-    public JButton getLimparButton() {
-        return limparButton;
+    public JButton getMostrarButton() {
+        return mostrarButton;
     }
     public JButton getBtnSelect1() {
         return btnSelect1;

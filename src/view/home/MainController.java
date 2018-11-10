@@ -1,32 +1,44 @@
-package view;
+package view.home;
 import interclasse.Grupo;
 import interclasse.Salas;
+import view.grupos.Grupos;
+import view.grupos.GruposController;
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainController {
+    //Telas
+    private Home home;
+    private GruposController grupos;
+
+    private int indiceEsporte = 0;
+
+    private static final String lbFutsal = "Futsal", lbBasquete = "Basquete",
+            lbVolei = "Vôlei", lbHandebol = "Handebol";
+    private List<String> esportes = new ArrayList<>(4);
+
+    //Salas
     private Salas primeiros = new Salas();
     private Salas segundos = new Salas();
     private Salas terceiros = new Salas();
-
+    //Grupos
     private Grupo futsal = new Grupo();
     private Grupo volei = new Grupo();
     private Grupo handebol = new Grupo();
     private Grupo basquete = new Grupo();
-
+    //List
     private List<String> salasPrimeiros = new ArrayList<>(6);
     private List<String> salasSegundos = new ArrayList<>(6);
     private List<String> salasTerceiros = new ArrayList<>(6);
-
-    //Panel
-    private Home home;
     //Button
     private JButton btnNext;
     private JButton btnPrev;
     private JButton salvarButton;
-    private JButton limparButton;
+    private JButton mostrarButton;
     private JButton btnSelect1;
     private JButton btnClear1;
     private JButton btnSelect2;
@@ -49,12 +61,13 @@ public class MainController {
 
     private void initComponents() {
         home = new Home();
+        grupos = new GruposController();
 
         //Button
         btnNext = home.getBtnNext();
         btnPrev = home.getBtnPrev();
         salvarButton = home.getSalvarButton();
-        limparButton = home.getLimparButton();
+        mostrarButton = home.getMostrarButton();
         btnClear1 = home.getBtnClear1();
         btnClear2 = home.getBtnClear2();
         btnClear3 = home.getBtnClear3();
@@ -69,6 +82,11 @@ public class MainController {
         panelPrimeiros = home.getPanelPrimeiros();
         panelSegundos = home.getPanelSegundos();
         panelTerceiros = home.getPanelTerceiros();
+
+        esportes.add(lbFutsal);
+        esportes.add(lbBasquete);
+        esportes.add(lbHandebol);
+        esportes.add(lbVolei);
     }
 
     private void initListeners() {
@@ -79,7 +97,7 @@ public class MainController {
         btnPrev.addActionListener(new limparButton());
 
         salvarButton.addActionListener(new salvarButton());
-        limparButton.addActionListener(new limparButton());
+        mostrarButton.addActionListener(new mostrarButton());
         //Checkbox
         for(int x=0; x < panelPrimeiros.getComponentCount(); x++) {
             JCheckBox cbPrimeiros = (JCheckBox) panelPrimeiros.getComponent(x);
@@ -96,7 +114,6 @@ public class MainController {
         btnClear1.addActionListener(new limparTodos());
         btnClear2.addActionListener(new limparTodos());
         btnClear3.addActionListener(new limparTodos());
-
     }
 
     public void showView() {
@@ -106,40 +123,24 @@ public class MainController {
     private class BtnNextListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            switch(lbEsporte.getText()){
-                case "Futsal":
-                    lbEsporte.setText("Basquete");
-                    break;
-                case "Basquete":
-                    lbEsporte.setText("Handebol");
-                    break;
-                case "Handebol":
-                    lbEsporte.setText("Vôlei");
-                    break;
-                default:
-                   lbEsporte.setText("Futsal");
-                   break;
-            }
+            if(indiceEsporte == esportes.size()-1)
+                indiceEsporte = 0;
+            else
+                indiceEsporte += 1;
+
+            lbEsporte.setText(esportes.get(indiceEsporte));
         }
     }
 
     private class BtnPrevListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            switch(lbEsporte.getText()){
-                case "Futsal":
-                    lbEsporte.setText("Vôlei");
-                    break;
-                case "Vôlei":
-                    lbEsporte.setText("Handebol");
-                    break;
-                case "Handebol":
-                    lbEsporte.setText("Basquete");
-                    break;
-                default:
-                    lbEsporte.setText("Futsal");
-                    break;
-            }
+            if(indiceEsporte == 0)
+                indiceEsporte = esportes.size()-1;
+            else
+                indiceEsporte -= 1;
+
+            lbEsporte.setText(esportes.get(indiceEsporte));
         }
     }
 
@@ -196,7 +197,7 @@ public class MainController {
         }
     }
 
-    private class salvarButton implements ActionListener{
+    private class salvarButton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             montarGruposAno(primeiros, salasPrimeiros);
@@ -208,20 +209,29 @@ public class MainController {
             switch (esporte) {
                 case "Futsal":
                     montarGruposEsporte(futsal);
+                    esportes.remove(lbFutsal);
                     break;
                 case "Vôlei":
                     montarGruposEsporte(volei);
+                    esportes.remove(lbVolei);
                     break;
                 case "Basquete":
                     montarGruposEsporte(basquete);
+                    esportes.remove(lbBasquete);
                     break;
                 case "Handebol":
                     montarGruposEsporte(handebol);
+                    esportes.remove(lbHandebol);
                     break;
             }
 
             lbArray.setVisible(true);
             lbArray2.setVisible(true);
+
+            if(esportes.size() == 0) {
+                home.setVisible(false);
+                grupos.showView();
+            }
         }
 
         public void montarGruposAno(Salas salas, List<String> participantes) {
@@ -229,15 +239,8 @@ public class MainController {
             salas.montadorGrupos();
         }
 
-        public void montarGruposEsporte(Grupo grupo){
+        public void montarGruposEsporte(Grupo grupo) {
             grupo.montarGrupos(primeiros, segundos, terceiros);
-
-            lbArray.setText(String.valueOf(
-                    grupo.getListaGrupos().get(0) + " " + grupo.getListaGrupos().get(1) +
-                            " " + grupo.getListaGrupos().get(2)));
-            lbArray2.setText(String.valueOf(
-                    grupo.getListaGrupos().get(3) + " " + grupo.getListaGrupos().get(4) +
-                            " " + grupo.getListaGrupos().get(5)));
         }
     }
 
@@ -261,6 +264,41 @@ public class MainController {
             lbArray.setVisible(false);
             lbArray2.setVisible(false);
         }
+    }
+
+    private class mostrarButton implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String esporte = lbEsporte.getText();
+
+            switch (esporte) {
+                case "Futsal":
+                    mostrarGrupoEsporte(futsal);
+                    break;
+                case "Vôlei":
+                    mostrarGrupoEsporte(volei);
+                    break;
+                case "Basquete":
+                    mostrarGrupoEsporte(basquete);
+                    break;
+                case "Handebol":
+                    mostrarGrupoEsporte(handebol);
+                    break;
+            }
+
+            lbArray2.setVisible(true);
+            lbArray.setVisible(true);
+        }
+
+        private void mostrarGrupoEsporte(Grupo grupo){
+            lbArray.setText(String.valueOf(
+                    grupo.getListaGrupos().get(0) + " " + grupo.getListaGrupos().get(1) +
+                            " " + grupo.getListaGrupos().get(2)));
+            lbArray2.setText(String.valueOf(
+                    grupo.getListaGrupos().get(3) + " " + grupo.getListaGrupos().get(4) +
+                            " " + grupo.getListaGrupos().get(5)));
+        }
+
     }
 
     private class primeirosListener implements ItemListener{

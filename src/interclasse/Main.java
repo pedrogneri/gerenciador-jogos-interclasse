@@ -1,5 +1,5 @@
 package interclasse;
-import view.MainController;
+import view.home.MainController;
 
 public class Main {
     public static void main(String args[]){
