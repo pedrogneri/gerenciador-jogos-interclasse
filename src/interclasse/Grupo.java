@@ -1,6 +1,6 @@
 package interclasse;
 import java.util.*;
-public class Grupo {
+public class Grupo { // Classe que monta grupos por esporte, com base nos grupos formados pela classe salas
     private List<List> grupos;
     private List<List> listaGrupos;
     private List<String> grupoA;
@@ -11,8 +11,8 @@ public class Grupo {
     private List<String> grupoF;
 
     public Grupo() {
-        this(new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(),
-                new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList());
+        this(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(),
+                new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
     }
 
     public Grupo(List<List>  grupos, List<List> listaGrupos, List<String> grupoA,
@@ -56,7 +56,7 @@ public class Grupo {
         this.listaGrupos = listaGrupos;
     }
 
-    public void montarArrayGrupos(Salas sala1, Salas sala2, Salas sala3) {
+    private void montarArrayGrupos(Salas sala1, Salas sala2, Salas sala3) {
         adicionarGrupos(sala1);
         adicionarGrupos(sala2);
         adicionarGrupos(sala3);
@@ -65,7 +65,7 @@ public class Grupo {
             if(getGrupos().get(x).equals(Collections.emptyList())) getGrupos().remove(x);
     }
 
-    public void adicionarGrupos(Salas sala) {
+    private void adicionarGrupos(Salas sala) {
         getGrupos().add(sala.getGrupo1());
         getGrupos().add(sala.getGrupo2());
     }
@@ -80,14 +80,9 @@ public class Grupo {
             adicionarElementosGrupo(x);
     }
 
-    public void adicionarElementosGrupo(int indice) {
+    private void adicionarElementosGrupo(int indice) {
         getListaGrupos().set(indice, getGrupos().get(indice));
     }
-
-    public Object salaSelecionada(int index1, int index2){
-        return getListaGrupos().get(index1).get(index2);
-    }
-
 }
 
 

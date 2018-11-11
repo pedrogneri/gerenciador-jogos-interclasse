@@ -1,6 +1,6 @@
 package interclasse;
 import java.util.*;
-public class Salas {
+public class Salas { // Classe que monta 1 ou 2 grupos com base nas salas selecionadas de cada ano (Ex. Primeiros)
     private List<String> salasParticipantes;
     private List<String> grupo1;
     private List<String> grupo2;
@@ -34,26 +34,30 @@ public class Salas {
         this.salasParticipantes = salasParticipantes;
     }
 
-    private void gerarParticipantes(List<String> participantes){
+    public void gerarParticipantes(List<String> participantes){
         setSalasParticipantes(participantes);
     }
 
-    public void montadorGrupos() {
-        setGrupo1(getSalasParticipantes().size() == 4 ? Arrays.asList("","","","") : Arrays.asList("","",""));
-        setGrupo2(new ArrayList<>());
+    public void montarGrupos() {
+        setGrupo1(Arrays.asList("","",""));
+        List<String> salas = new ArrayList<>(getSalasParticipantes());
 
-        List<String> salas = new ArrayList<>();
-        salas.addAll(getSalasParticipantes());
-
-        Collections.shuffle(salas);
-
-        for(int x = 0; x < getGrupo1().size(); x++)
-            getGrupo1().set(x, salas.get(x));
-
-        montadorGrupo2(salas);
+        montarGrupo1(salas);
+        montarGrupo2(salas);
     }
 
-    private void montadorGrupo2(List<String> salas){
+    private void montarGrupo1(List<String> salas){
+        System.out.println(salas.size()); // OBS: somente para teste
+
+        if(salas.size() > 4) {
+            Collections.shuffle(salas);
+            for (int x = 0; x < getGrupo1().size(); x++)
+                getGrupo1().set(x, salas.get(x));
+        }else
+            setGrupo1(new ArrayList<>(salas));
+    }
+
+    private void montarGrupo2(List<String> salas){
         salas.removeAll(getGrupo1());
         setGrupo2(salas);
     }

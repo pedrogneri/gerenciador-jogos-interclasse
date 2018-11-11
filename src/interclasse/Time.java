@@ -1,7 +1,7 @@
 package interclasse;
 import java.util.ArrayList;
 import java.util.List;
-public class Time {
+public class Time { // Classe sem uso por enquanto
     private String nome;
     private int saldo;
     private int pontos;

@@ -1,29 +1,24 @@
 package view.home;
 import javax.swing.*;
-
-public class Home extends JFrame {
-
+public class Home extends JFrame { // Classe que contém os componentes da tela principal (Home.form)
     //Panel principal
     private JPanel mainFrame;
+    //Label
+    private JLabel lbEsporte;
+    //Panel
+    private JPanel panelPrimeiros;
+    private JPanel panelSegundos;
+    private JPanel panelTerceiros;
     //Button
     private JButton btnNext;
     private JButton btnPrev;
-    private JButton salvarButton;
-    private JButton mostrarButton;
+    private JButton btnSalvar;
     private JButton btnSelect1;
     private JButton btnClear1;
     private JButton btnSelect2;
     private JButton btnClear2;
     private JButton btnSelect3;
     private JButton btnClear3;
-    //Label
-    private JLabel lbArray;
-    private JLabel lbArray2;
-    private JLabel lbEsporte;
-    //Panel
-    private JPanel panelPrimeiros;
-    private JPanel panelSegundos;
-    private JPanel panelTerceiros;
     //image
     private JLabel lbLogo;
 
@@ -36,6 +31,20 @@ public class Home extends JFrame {
         mainFrame.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
     }
 
+    //Label
+    public JLabel getLbEsporte() {
+        return lbEsporte;
+    }
+    //Panel
+    public JPanel getPanelPrimeiros() {
+        return panelPrimeiros;
+    }
+    public JPanel getPanelSegundos() {
+        return panelSegundos;
+    }
+    public JPanel getPanelTerceiros() {
+        return panelTerceiros;
+    }
     //Button
     public JButton getBtnNext() {
         return btnNext;
@@ -43,11 +52,8 @@ public class Home extends JFrame {
     public JButton getBtnPrev() {
         return btnPrev;
     }
-    public JButton getSalvarButton() {
-        return salvarButton;
-    }
-    public JButton getMostrarButton() {
-        return mostrarButton;
+    public JButton getBtnSalvar() {
+        return btnSalvar;
     }
     public JButton getBtnSelect1() {
         return btnSelect1;
@@ -67,26 +73,4 @@ public class Home extends JFrame {
     public JButton getBtnClear3() {
         return btnClear3;
     }
-    //Label
-    public JLabel getLbEsporte() {
-        return lbEsporte;
-    }
-    public JLabel getLbArray() {
-        return lbArray;
-    }
-    public JLabel getLbArray2() {
-        return lbArray2;
-    }
-    //Panel
-    public JPanel getPanelPrimeiros() {
-        return panelPrimeiros;
-    }
-    public JPanel getPanelSegundos() {
-        return panelSegundos;
-    }
-    public JPanel getPanelTerceiros() {
-        return panelTerceiros;
-    }
-
-
 }

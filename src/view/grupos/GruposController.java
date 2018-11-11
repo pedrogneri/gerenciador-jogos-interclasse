@@ -1,8 +1,7 @@
 package view.grupos;
-
 import javax.swing.*;
-
 public class GruposController {
+    //Classe que contem a parte logica da segudna tela do programa (Grupos.form)
 
     private Grupos grupos;
     //Button

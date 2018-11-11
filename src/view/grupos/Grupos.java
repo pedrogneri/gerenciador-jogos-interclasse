@@ -1,7 +1,7 @@
 package view.grupos;
 import javax.swing.*;
-
 public class Grupos extends JFrame{
+    //Classe que contem os componentes da segunda tela do programa (Grupos.form)
 
     //Panel Principal
     private JPanel mainFrame;
