@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="892d18e3-bd6b-4a35-bb78-7db02a4dc807" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Salas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Salas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Time.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/grupos/Grupos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/Grupos.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/grupos/Grupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/Grupos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/grupos/GruposController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/GruposController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/home/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/Home.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/home/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/MainController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,40 +20,44 @@
     <session id="1170890638">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.10" value="7" />
+          <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="form" value="4" />
+          <entry key="form" value="5" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="20" />
+          <entry key="java" value="23" />
           <entry key="md" value="1" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="GUI_DESIGNER_FORM" value="4" />
-          <entry key="JAVA" value="20" />
+          <entry key="GUI_DESIGNER_FORM" value="5" />
+          <entry key="JAVA" value="23" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7861" />
+          <entry key="java" value="11840" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7861" />
+          <entry key="JAVA" value="11840" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -67,34 +66,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/interclasse/Grupo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-              <folding>
-                <element signature="method#Grupo#1;class#Grupo#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/interclasse/Salas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="56" column="46" lean-forward="true" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-              <folding>
-                <element signature="method#Salas#1;class#Salas#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/home/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="28" column="55" lean-forward="true" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -109,15 +84,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/grupos/GruposController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-852">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="e#2042#2043#0" expanded="true" />
+                <element signature="e#2132#2133#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/interclasse/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/home/Home.form">
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
+        <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="133">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -144,22 +146,23 @@
         <option value="$PROJECT_DIR$/src/view/Grupos.java" />
         <option value="$PROJECT_DIR$/src/view/GruposController.java" />
         <option value="$PROJECT_DIR$/src/view/MainController.java" />
-        <option value="$PROJECT_DIR$/src/view/grupos/Grupos.java" />
-        <option value="$PROJECT_DIR$/src/view/grupos/GruposController.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Main.java" />
-        <option value="$PROJECT_DIR$/src/view/grupos/Grupos.form" />
-        <option value="$PROJECT_DIR$/src/view/home/Home.form" />
         <option value="$PROJECT_DIR$/src/interclasse/Time.java" />
-        <option value="$PROJECT_DIR$/src/interclasse/Grupo.java" />
         <option value="$PROJECT_DIR$/src/view/home/Home.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Salas.java" />
+        <option value="$PROJECT_DIR$/src/interclasse/Grupo.java" />
+        <option value="$PROJECT_DIR$/src/view/home/Home.form" />
         <option value="$PROJECT_DIR$/src/view/home/MainController.java" />
+        <option value="$PROJECT_DIR$/src/view/grupos/Grupos.java" />
+        <option value="$PROJECT_DIR$/src/view/grupos/GruposController.java" />
+        <option value="$PROJECT_DIR$/src/view/grupos/Grupos.form" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -186,6 +189,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+              <item name="interclasse" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+              <item name="grupos" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+              <item name="home" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,39 +265,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-              <item name="interclasse" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-              <item name="view" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-              <item name="view" type="1f31426a:PackageElementNode" />
-              <item name="grupos" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Interclasse" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Interclasse" type="616d4139:PackageViewModuleNode" />
-              <item name="view" type="1f31426a:PackageElementNode" />
-              <item name="home" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,9 +272,10 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="interclasse" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="235" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541353055734" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/pedroneri/Documents/Projetos/Interclasse/src/view/grupos/Grupos.java" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="209" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542108618346" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
@@ -326,12 +330,21 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16595136" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.17238913" />
+      <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.17238913" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -339,11 +352,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25060242" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22289157" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
@@ -412,54 +425,34 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/interclasse/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/grupos/GruposController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interclasse/Grupo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-          <folding>
-            <element signature="method#Grupo#1;class#Grupo#0" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/interclasse/Salas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="56" column="46" lean-forward="true" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-          <folding>
-            <element signature="method#Salas#1;class#Salas#0" />
-          </folding>
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/home/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="28" column="55" lean-forward="true" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -470,15 +463,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1138">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="e#7959#7960#0" expanded="true" />
+            <element signature="e#8033#8034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interclasse/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/grupos/GruposController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-852">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#2042#2043#0" expanded="true" />
+            <element signature="e#2132#2133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/home/Home.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">

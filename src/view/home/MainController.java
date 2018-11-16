@@ -6,6 +6,7 @@ import view.grupos.GruposController;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 public class MainController { // Classe que contém a parte lógica da tela principal do programa (Home.form)
 //  Telas
@@ -28,24 +29,23 @@ public class MainController { // Classe que contém a parte lógica da tela prin
     private JButton btnSelect3;
     private JButton btnClear3;
 //  Salas
-    private Salas primeiros = new Salas();
-    private Salas segundos = new Salas();
-    private Salas terceiros = new Salas();
+    private Salas primeiros = new Salas(), segundos = new Salas(), terceiros = new Salas();
 //  Grupos
-    private Grupo futsal = new Grupo();
-    private Grupo volei = new Grupo();
-    private Grupo handebol = new Grupo();
-    private Grupo basquete = new Grupo();
+    public static Grupo futsal = new Grupo();
+    public static Grupo volei = new Grupo();
+    public static Grupo handebol = new Grupo();
+    public static Grupo basquete = new Grupo();
 //  List
     private List<String> salasPrimeiros = new ArrayList<>(6);
     private List<String> salasSegundos = new ArrayList<>(6);
     private List<String> salasTerceiros = new ArrayList<>(6);
-    private List<String> esportes = new ArrayList<>(4);
+    private List<String> esportesLabel = new ArrayList<>(4);
+    private List<Grupo> esportesGrupos = new ArrayList<>(4);
 //  Index esportes
     private int indiceEsporte = 0;
 //  Esportes
     private static final String lbFutsal = "Futsal", lbBasquete = "Basquete",
-            lbVolei = "Vôlei", lbHandebol = "Handebol";
+        lbVolei = "Vôlei", lbHandebol = "Handebol";
 
     public MainController() {
         initComponents();
@@ -73,31 +73,36 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         btnSelect2 = home.getBtnSelect2();
         btnSelect3 = home.getBtnSelect3();
 
-        esportes.add(lbFutsal);
-        esportes.add(lbBasquete);
-        esportes.add(lbHandebol);
-        esportes.add(lbVolei);
+        esportesLabel.add(lbFutsal);
+        esportesLabel.add(lbBasquete);
+        esportesLabel.add(lbHandebol);
+        esportesLabel.add(lbVolei);
+
+        esportesGrupos.add(futsal);
+        esportesGrupos.add(basquete);
+        esportesGrupos.add(handebol);
+        esportesGrupos.add(volei);
     }
 
     private void initListeners() {
 //      Button
         btnNext.addActionListener(new BtnNextListener());
         btnPrev.addActionListener(new BtnPrevListener());
-        btnSalvar.addActionListener(new btnSalvarListener());
-        btnSelect1.addActionListener(new selecionarTodos());
-        btnSelect2.addActionListener(new selecionarTodos());
-        btnSelect3.addActionListener(new selecionarTodos());
-        btnClear1.addActionListener(new limparTodos());
-        btnClear2.addActionListener(new limparTodos());
-        btnClear3.addActionListener(new limparTodos());
+        btnSalvar.addActionListener(new BtnSalvarListener());
+        btnSelect1.addActionListener(new BtnSelecionarTodos());
+        btnSelect2.addActionListener(new BtnSelecionarTodos());
+        btnSelect3.addActionListener(new BtnSelecionarTodos());
+        btnClear1.addActionListener(new BtnLimparTodos());
+        btnClear2.addActionListener(new BtnLimparTodos());
+        btnClear3.addActionListener(new BtnLimparTodos());
 //      Checkbox
         for(int x=0; x < panelPrimeiros.getComponentCount(); x++) {
             JCheckBox cbPrimeiros = (JCheckBox) panelPrimeiros.getComponent(x);
             JCheckBox cbSegundos = (JCheckBox) panelSegundos.getComponent(x);
             JCheckBox cbTerceiros = (JCheckBox) panelTerceiros.getComponent(x);
-            cbPrimeiros.addItemListener(new primeirosListener());
-            cbSegundos.addItemListener(new segundosListener());
-            cbTerceiros.addItemListener(new terceirosListener());
+            cbPrimeiros.addItemListener(new CbPrimeirosListener());
+            cbSegundos.addItemListener(new CbSegundosListener());
+            cbTerceiros.addItemListener(new CbTerceirosListener());
         }
     }
 
@@ -131,35 +136,34 @@ public class MainController { // Classe que contém a parte lógica da tela prin
     }
 
 //  Listeners
-    private class BtnNextListener implements ActionListener{
+    public class BtnNextListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            boolean ultimoEsporte = indiceEsporte == esportes.size()-1;
+            boolean ultimoEsporte = indiceEsporte == esportesLabel.size()-1;
             if(ultimoEsporte)
                 indiceEsporte = 0;
             else
                 indiceEsporte += 1;
 
-            lbEsporte.setText(esportes.get(indiceEsporte));
+            lbEsporte.setText(esportesLabel.get(indiceEsporte));
             limparSelects();
         }
     }
-
-    private class BtnPrevListener implements ActionListener{
+    public class BtnPrevListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             boolean primeiroEsporte = indiceEsporte == 0;
             if(primeiroEsporte)
-                indiceEsporte = esportes.size()-1;
+                indiceEsporte = esportesLabel.size()-1;
             else
                 indiceEsporte -= 1;
 
-            lbEsporte.setText(esportes.get(indiceEsporte));
+            lbEsporte.setText(esportesLabel.get(indiceEsporte));
             limparSelects();
         }
     }
 
-    private class selecionarTodos implements ActionListener{
+    private class BtnSelecionarTodos implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             Object btn = e.getSource();
@@ -171,8 +175,7 @@ public class MainController { // Classe que contém a parte lógica da tela prin
                 selecaoElementos(panelTerceiros, true);
         }
     }
-
-    private class limparTodos implements ActionListener{
+    private class BtnLimparTodos implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             Object btn = e.getSource();
@@ -185,35 +188,30 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
-    private class btnSalvarListener implements ActionListener {
+    private class BtnSalvarListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String esporte = lbEsporte.getText();
+            if(salasPrimeiros.size() == 0 && salasSegundos.size() == 0 && salasTerceiros.size() == 0) {
+                Object[] options = {"Confirmar", "Cancelar"};
+                int x = JOptionPane.showOptionDialog(null,
+                        "Tem certeza de que deseja salvar o esporte vazio?", "ATENÇÃO!",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
+                        options, options[0]);
+                if (x == 0)
+                    finalizarSalvar();
+            }else
+                finalizarSalvar();
+        }
 
+        private void finalizarSalvar(){
             montarGruposAno(primeiros, salasPrimeiros);
             montarGruposAno(segundos, salasSegundos);
             montarGruposAno(terceiros, salasTerceiros);
 
-            switch (esporte) {
-                case "Futsal":
-                    montarGruposEsporte(futsal);
-                    System.out.println(futsal.getListaGrupos()); // OBS: só para testes
-                    break;
-                case "Vôlei":
-                    montarGruposEsporte(volei);
-                    System.out.println(volei.getListaGrupos()); // OBS: só para testes
-                    break;
-                case "Basquete":
-                    montarGruposEsporte(basquete);
-                    System.out.println(basquete.getListaGrupos()); // OBS: só para testes
-                    break;
-                case "Handebol":
-                    montarGruposEsporte(handebol);
-                    System.out.println(handebol.getListaGrupos()); // OBS: só para testes
-                    break;
-            }
+            montarGruposEsporte(esportesGrupos.get(indiceEsporte));
+            System.out.println(esportesGrupos.get(indiceEsporte).getListaGrupos()); // OBS: Somente para testes
 
-            removerEsporte(esporte);
+            removerEsporte();
             limparSelects();
             mudarEsporte();
         }
@@ -226,41 +224,43 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         private void montarGruposEsporte(Grupo grupo) {
             grupo.montarGrupos(primeiros, segundos, terceiros);
         }
-        private void removerEsporte(String nomeEsporte){
-            esportes.remove(nomeEsporte);
+
+        private void removerEsporte(){
+            esportesLabel.remove(indiceEsporte);
+            esportesGrupos.remove(indiceEsporte);
         }
 
         private void mudarEsporte(){
-            boolean semEsportes = esportes.size() == 0;
+            boolean semEsportes = esportesLabel.size() == 0;
             boolean primeiroEsporte = indiceEsporte == 0;
             if(semEsportes){
                 home.setVisible(false);
                 grupos.showView();
             }else if(primeiroEsporte) {
-                indiceEsporte = esportes.size()-1;
-                lbEsporte.setText(esportes.get(indiceEsporte));
+                indiceEsporte = esportesLabel.size()-1;
+                lbEsporte.setText(esportesLabel.get(indiceEsporte));
             } else {
                 indiceEsporte -= 1;
-                lbEsporte.setText(esportes.get(indiceEsporte));
+                lbEsporte.setText(esportesLabel.get(indiceEsporte));
             }
         }
     }
 
-    private class primeirosListener implements ItemListener{
+    private class CbPrimeirosListener implements ItemListener{
         @Override
         public void itemStateChanged(ItemEvent e) {
             JCheckBox cb = (JCheckBox) e.getItemSelectable();
             addSalasSelecionadas(cb, salasPrimeiros);
         }
     }
-    private class segundosListener implements ItemListener{
+    private class CbSegundosListener implements ItemListener{
         @Override
         public void itemStateChanged(ItemEvent e) {
             JCheckBox cb = (JCheckBox) e.getItemSelectable();
             addSalasSelecionadas(cb, salasSegundos);
         }
     }
-    private class terceirosListener implements ItemListener{
+    private class CbTerceirosListener implements ItemListener{
         @Override
         public void itemStateChanged(ItemEvent e) {
             JCheckBox cb = (JCheckBox) e.getItemSelectable();
