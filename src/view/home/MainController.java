@@ -1,6 +1,7 @@
 package view.home;
 import interclasse.Grupo;
 import interclasse.Salas;
+import view.alteracaoGrupo.AlteracaoGrupoController;
 import view.grupos.GruposController;
 
 import javax.swing.*;
@@ -136,6 +137,8 @@ public class MainController { // Classe que contém a parte lógica da tela prin
     }
 
 //  Listeners
+
+//  Botoes de navegaçao de esporte (<< e >>)
     public class BtnNextListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -163,6 +166,7 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
+//  Botoes checkBox (Selecionar e limpar todos)
     private class BtnSelecionarTodos implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -188,18 +192,49 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
+
+
+//  CheckBox Listeners
+    private class CbPrimeirosListener implements ItemListener{
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            JCheckBox cb = (JCheckBox) e.getItemSelectable();
+            addSalasSelecionadas(cb, salasPrimeiros);
+        }
+    }
+    private class CbSegundosListener implements ItemListener{
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            JCheckBox cb = (JCheckBox) e.getItemSelectable();
+            addSalasSelecionadas(cb, salasSegundos);
+        }
+    }
+    private class CbTerceirosListener implements ItemListener{
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            JCheckBox cb = (JCheckBox) e.getItemSelectable();
+            addSalasSelecionadas(cb, salasTerceiros);
+        }
+    }
+
+//  Botao salvar
     private class BtnSalvarListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(salasPrimeiros.size() == 0 && salasSegundos.size() == 0 && salasTerceiros.size() == 0) {
-                Object[] options = {"Confirmar", "Cancelar"};
-                int x = JOptionPane.showOptionDialog(null,
-                        "Tem certeza de que deseja salvar o esporte vazio?", "ATENÇÃO!",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
-                        options, options[0]);
-                if (x == 0)
-                    finalizarSalvar();
+            boolean gruposVazios = salasPrimeiros.size() == 0 && salasSegundos.size() == 0 && salasTerceiros.size() == 0;
+            if(gruposVazios) {
+               warningGruposVazios();
             }else
+                finalizarSalvar();
+        }
+
+        private void warningGruposVazios(){
+            Object[] options = {"Confirmar", "Cancelar"};
+            int x = JOptionPane.showOptionDialog(null,
+                    "Tem certeza de que deseja salvar o esporte vazio?", "ATENÇÃO!",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
+                    options, options[0]);
+            if (x == 0)
                 finalizarSalvar();
         }
 
@@ -243,28 +278,6 @@ public class MainController { // Classe que contém a parte lógica da tela prin
                 indiceEsporte -= 1;
                 lbEsporte.setText(esportesLabel.get(indiceEsporte));
             }
-        }
-    }
-
-    private class CbPrimeirosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasPrimeiros);
-        }
-    }
-    private class CbSegundosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasSegundos);
-        }
-    }
-    private class CbTerceirosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasTerceiros);
         }
     }
 

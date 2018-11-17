@@ -56,28 +56,33 @@ public class Grupo { // Classe que monta grupos por esporte, com base nos grupos
         this.listaGrupos = listaGrupos;
     }
 
-    private void montarArrayGrupos(Salas sala1, Salas sala2, Salas sala3) {
-        adicionarGrupos(sala1);
-        adicionarGrupos(sala2);
-        adicionarGrupos(sala3);
+    private void montarArrayGrupos(Salas primeiros, Salas segundos, Salas terceiros) {
+        adicionarGrupos(primeiros);
+        adicionarGrupos(segundos);
+        adicionarGrupos(terceiros);
 
-        for(int x=0; x < getGrupos().size(); x++)
-            if(getGrupos().get(x).equals(Collections.emptyList())) getGrupos().remove(x);
+        getGrupos().remove(Collections.emptyList());
     }
 
-    private void adicionarGrupos(Salas sala) {
-        getGrupos().add(sala.getGrupo1());
-        getGrupos().add(sala.getGrupo2());
+    private void adicionarGrupos(Salas ano) {
+        getGrupos().add(ano.getGrupo1());
+        getGrupos().add(ano.getGrupo2());
     }
 
-    public void montarGrupos(Salas sala1, Salas sala2, Salas sala3) {
-        montarArrayGrupos(sala1, sala2, sala3);
+    public void montarGrupos(Salas primeiros, Salas segundos, Salas terceiros) {
+        montarArrayGrupos(primeiros, segundos, terceiros);
 
-        setListaGrupos(Arrays.asList(getGrupoA(), getGrupoB(), getGrupoC(),
-                getGrupoD(), getGrupoE(), getGrupoF()));
+        getListaGrupos().add(getGrupoA());
+        getListaGrupos().add(getGrupoB());
+        getListaGrupos().add(getGrupoC());
+        getListaGrupos().add(getGrupoD());
+        getListaGrupos().add(getGrupoE());
+        getListaGrupos().add(getGrupoF());
 
         for(int x=0; x < getGrupos().size(); x++)
             adicionarElementosGrupo(x);
+
+        getListaGrupos().remove(Collections.emptyList());
     }
 
     private void adicionarElementosGrupo(int indice) {

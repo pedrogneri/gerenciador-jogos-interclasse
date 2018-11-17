@@ -11,15 +11,13 @@ public class Grupos extends JFrame{ // Classe que contem os componentes da segun
     private JLabel lbLogo;
 //  Panel
     private JPanel panelGrupos;
+//  ComboBox
     private JComboBox cbA;
     private JComboBox cbB;
     private JComboBox cbD;
     private JComboBox cbC;
     private JComboBox cbE;
     private JComboBox cbF;
-
-    private JButton alterarGrupoButton;
-    private JButton confirmarButton;
 
     public Grupos() {
         setExtendedState(JFrame.MAXIMIZED_BOTH);

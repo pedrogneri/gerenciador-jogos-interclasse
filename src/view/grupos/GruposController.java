@@ -32,6 +32,7 @@ public class GruposController { //Classe que contem a parte logica da segudna te
 //  List
     private List<String> esportesLabel = new ArrayList<>(4);
     private List<Grupo> esportesGrupos = new ArrayList<>(4);
+    private List<JComboBox> comboBoxes = new ArrayList<>(6);
 //  Index esportes
     private int indiceEsporte = 0;
 //  Esportes
@@ -67,6 +68,13 @@ public class GruposController { //Classe que contem a parte logica da segudna te
         esportesGrupos.add(MainController.basquete);
         esportesGrupos.add(MainController.handebol);
         esportesGrupos.add(MainController.volei);
+
+        comboBoxes.add(cbA);
+        comboBoxes.add(cbB);
+        comboBoxes.add(cbC);
+        comboBoxes.add(cbD);
+        comboBoxes.add(cbE);
+        comboBoxes.add(cbF);
     }
 
     private void initListeners() {
@@ -87,12 +95,8 @@ public class GruposController { //Classe que contem a parte logica da segudna te
     }
 
     private void mostrarGrupos(){
-        adicionarItemCb(cbA, 0);
-        adicionarItemCb(cbB, 1);
-        adicionarItemCb(cbC, 2);
-        adicionarItemCb(cbD, 3);
-        adicionarItemCb(cbE, 4);
-        adicionarItemCb(cbF, 5);
+        for(int x=0; x < esportesGrupos.get(indiceEsporte).getListaGrupos().size(); x++)
+            adicionarItemCb(comboBoxes.get(x), x);
     }
 
     private void adicionarItemCb(JComboBox cb, int x){
@@ -101,12 +105,7 @@ public class GruposController { //Classe que contem a parte logica da segudna te
     }
 
     private void resetarItens(){
-        cbA.removeAllItems();
-        cbB.removeAllItems();
-        cbC.removeAllItems();
-        cbD.removeAllItems();
-        cbE.removeAllItems();
-        cbF.removeAllItems();
+        for (JComboBox comboBox : comboBoxes) comboBox.removeAllItems();
     }
 
     private void removerEsporte(){
