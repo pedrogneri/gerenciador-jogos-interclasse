@@ -38,7 +38,7 @@ public class Salas { // Classe que monta 1 ou 2 grupos com base nas salas seleci
         setSalasParticipantes(participantes);
     }
 
-    public void montarGrupos() {
+    public void organizarParticipantes() {
         setGrupo1(Arrays.asList("","",""));
         List<String> salas = new ArrayList<>(getSalasParticipantes());
 

@@ -74,6 +74,7 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         btnSelect2 = home.getBtnSelect2();
         btnSelect3 = home.getBtnSelect3();
 
+//      Adicionar elementos aos lists de navegacao
         esportesLabel.add(lbFutsal);
         esportesLabel.add(lbBasquete);
         esportesLabel.add(lbHandebol);
@@ -113,24 +114,26 @@ public class MainController { // Classe que contém a parte lógica da tela prin
     }
 
     private void selecaoElementos(JPanel panel, boolean selecionado){
-        for (int x = 0; x < panel.getComponentCount(); x++) {
+        int quantidadeCheckbox = panel.getComponentCount();
+        for (int x = 0; x < quantidadeCheckbox; x++) {
             JCheckBox cb = (JCheckBox) panel.getComponent(x);
             cb.setSelected(selecionado);
         }
     }
 
     private void addSalasSelecionadas(JCheckBox cb, List<String> salas){
-        String texto = cb.getText();
+        String sala = cb.getText();
         if(cb.isSelected())
-            salas.add(texto);
+            salas.add(sala);
         else
-            salas.remove(texto);
+            salas.remove(sala);
     }
 
     private void limparSelects(){
         selecaoElementos(panelPrimeiros, false);
         selecaoElementos(panelSegundos, false);
         selecaoElementos(panelTerceiros, false);
+//      Limpar listas volateis de salas participantes
         salasPrimeiros.clear();
         salasSegundos.clear();
         salasTerceiros.clear();
@@ -192,8 +195,6 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
-
-
 //  CheckBox Listeners
     private class CbPrimeirosListener implements ItemListener{
         @Override
@@ -222,45 +223,50 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         @Override
         public void actionPerformed(ActionEvent e) {
             boolean gruposVazios = salasPrimeiros.size() == 0 && salasSegundos.size() == 0 && salasTerceiros.size() == 0;
-            if(gruposVazios) {
-               warningGruposVazios();
-            }else
-                finalizarSalvar();
+            if(gruposVazios)
+                warningGruposVazios();
+            else
+                salvar();
+        }
+
+        private void salvar(){
+            organizarTodosParticipantes();
+            montarGrupos(esportesGrupos.get(indiceEsporte));
+            System.out.println(esportesGrupos.get(indiceEsporte).getListaGrupos()); // OBS: Somente para testes
+
+            prosseguirEsporte();
         }
 
         private void warningGruposVazios(){
-            Object[] options = {"Confirmar", "Cancelar"};
-            int x = JOptionPane.showOptionDialog(null,
+            Object[] opcoes = {"Confirmar", "Cancelar"};
+//          Tela de Warning que retorna index da opcao selecionada
+            int opcaoEscolhida = JOptionPane.showOptionDialog(null,
                     "Tem certeza de que deseja salvar o esporte vazio?", "ATENÇÃO!",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
-                    options, options[0]);
-            if (x == 0)
-                finalizarSalvar();
+                    opcoes, opcoes[0]);
+            if (opcaoEscolhida == 0)
+                salvar();
         }
 
-        private void finalizarSalvar(){
-            montarGruposAno(primeiros, salasPrimeiros);
-            montarGruposAno(segundos, salasSegundos);
-            montarGruposAno(terceiros, salasTerceiros);
-
-            montarGruposEsporte(esportesGrupos.get(indiceEsporte));
-            System.out.println(esportesGrupos.get(indiceEsporte).getListaGrupos()); // OBS: Somente para testes
-
-            removerEsporte();
-            limparSelects();
-            mudarEsporte();
-        }
-
-        private void montarGruposAno(Salas salas, List<String> participantes) {
+//      Métodos da classe salas (organiza os participantes)
+        private void organizarParticipantes(Salas salas, List<String> participantes) {
             salas.gerarParticipantes(participantes);
-            salas.montarGrupos();
+            salas.organizarParticipantes();
         }
 
-        private void montarGruposEsporte(Grupo grupo) {
+        private void organizarTodosParticipantes(){
+           organizarParticipantes(primeiros, salasPrimeiros);
+           organizarParticipantes(segundos, salasSegundos);
+           organizarParticipantes(terceiros, salasTerceiros);
+        }
+
+//      Método da classe grupo (gera os grupos)
+        private void montarGrupos(Grupo grupo) {
             grupo.montarGrupos(primeiros, segundos, terceiros);
         }
 
-        private void removerEsporte(){
+//      Métodos para avançar para o proximo esporte
+        private void removerEsporteSalvo(){
             esportesLabel.remove(indiceEsporte);
             esportesGrupos.remove(indiceEsporte);
         }
@@ -279,6 +285,13 @@ public class MainController { // Classe que contém a parte lógica da tela prin
                 lbEsporte.setText(esportesLabel.get(indiceEsporte));
             }
         }
+
+        private void prosseguirEsporte(){
+            removerEsporteSalvo();
+            mudarEsporte();
+            limparSelects();
+        }
+
     }
 
 }
