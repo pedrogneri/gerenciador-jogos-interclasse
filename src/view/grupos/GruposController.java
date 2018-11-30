@@ -1,43 +1,47 @@
 package view.grupos;
 import interclasse.Grupo;
+import view.alteracaoGrupo.AlteracaoGrupoController;
 import view.home.MainController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 public class GruposController { //Classe que contem a parte logica da segudna tela do programa (Grupos.form)
 
-//   TODO: conexao com o banco
+//   TODO: Conexao com o banco
 //   TODO: add e remover salas de um grupo
 //   TODO: inserir pontos
 
 //  Telas
     private Grupos grupos;
+    private AlteracaoGrupoController alteracao;
 //  Button
     private JButton btnNext;
     private JButton btnPrev;
 //  Label
     private JLabel lbEsporte;
-//  Panel
-    private JPanel panelGrupos;
-//  ComboBox
-    private JComboBox cbA;
-    private JComboBox cbB;
-    private JComboBox cbD;
-    private JComboBox cbC;
-    private JComboBox cbE;
-    private JComboBox cbF;
+    private JLabel lbA;
+    private JLabel lbB;
+    private JLabel lbC;
+    private JLabel lbD;
+    private JLabel lbE;
+    private JLabel lbF;
 //  List
     private List<String> esportesLabel = new ArrayList<>(4);
     private List<Grupo> esportesGrupos = new ArrayList<>(4);
-    private List<JComboBox> comboBoxes = new ArrayList<>(6);
+    private List<JLabel> gruposLabel = new ArrayList<>(4);
 //  Index esportes
-    private int indiceEsporte = 0;
+    private  int indiceEsporte = 0;
 //  Esportes
-    private static final String lbFutsal = "Futsal", lbBasquete = "Basquete",
-            lbVolei = "Vôlei", lbHandebol = "Handebol";
+    private static final String
+        lbFutsalMasc = "Futsal Masc", lbFutsalFem = "Futsal Fem",
+        lbBasqueteMasc = "Basquete Masc", lbBasqueteFem = "Basquete Fem",
+        lbVoleiMasc = "Vôlei Masc", lbVoleiFem = "Vôlei Fem",
+        lbHandebolMasc = "Handebol Masc", lbHandebolFem = "Handebol Fem";
+
 
     public GruposController() {
         initComponents();
@@ -46,35 +50,43 @@ public class GruposController { //Classe que contem a parte logica da segudna te
 
     private void initComponents() {
         grupos = new Grupos();
+        alteracao = new AlteracaoGrupoController();
 
         btnNext = grupos.getBtnNext();
         btnPrev = grupos.getBtnPrev();
         lbEsporte = grupos.getLbEsporte();
-        panelGrupos = grupos.getPanelGrupos();
 
-        cbA = grupos.getCbA();
-        cbB = grupos.getCbB();
-        cbC = grupos.getCbC();
-        cbD = grupos.getCbD();
-        cbE = grupos.getCbE();
-        cbF = grupos.getCbF();
+        lbA = grupos.getLbA();
+        lbB = grupos.getLbB();
+        lbC = grupos.getLbC();
+        lbD = grupos.getLbD();
+        lbE = grupos.getLbE();
+        lbF = grupos.getLbF();
 
-        esportesLabel.add(lbFutsal);
-        esportesLabel.add(lbBasquete);
-        esportesLabel.add(lbHandebol);
-        esportesLabel.add(lbVolei);
+        esportesLabel.add(lbFutsalMasc);
+        esportesLabel.add(lbFutsalFem);
+        esportesLabel.add(lbBasqueteMasc);
+        esportesLabel.add(lbBasqueteFem);
+        esportesLabel.add(lbHandebolMasc);
+        esportesLabel.add(lbHandebolFem);
+        esportesLabel.add(lbVoleiMasc);
+        esportesLabel.add(lbVoleiFem);
 
-        esportesGrupos.add(MainController.futsal);
-        esportesGrupos.add(MainController.basquete);
-        esportesGrupos.add(MainController.handebol);
-        esportesGrupos.add(MainController.volei);
+        esportesGrupos.add(MainController.futsalMasc);
+        esportesGrupos.add(MainController.futsalFem);
+        esportesGrupos.add(MainController.basqueteMasc);
+        esportesGrupos.add(MainController.basqueteFem);
+        esportesGrupos.add(MainController.handebolMasc);
+        esportesGrupos.add(MainController.handebolFem);
+        esportesGrupos.add(MainController.voleiMasc);
+        esportesGrupos.add(MainController.voleiFem);
 
-        comboBoxes.add(cbA);
-        comboBoxes.add(cbB);
-        comboBoxes.add(cbC);
-        comboBoxes.add(cbD);
-        comboBoxes.add(cbE);
-        comboBoxes.add(cbF);
+        gruposLabel.add(lbA);
+        gruposLabel.add(lbB);
+        gruposLabel.add(lbC);
+        gruposLabel.add(lbD);
+        gruposLabel.add(lbE);
+        gruposLabel.add(lbF);
     }
 
     private void initListeners() {
@@ -83,36 +95,44 @@ public class GruposController { //Classe que contem a parte logica da segudna te
     }
 
 //  Metodos
-    public void showView() {
-        removerEsporte();
-        grupos.setVisible(true);
+    private void showView() {
+    grupos.setVisible(true);
+}
+
+    public void inicializarView(){
+        removerEsportesVazios();
         lbEsporte.setText(esportesLabel.get(indiceEsporte));
         mostrarGrupos();
+        showView();
     }
 
-    private List grupo(int indiceGrupo){
-        return esportesGrupos.get(indiceEsporte).getListaGrupos().get(indiceGrupo);
+    private List retornarGrupo(int indiceGrupo){
+        return retornarEsporte(indiceEsporte).getGrupos().get(indiceGrupo);
+    }
+    private Grupo retornarEsporte(int indice){
+       return esportesGrupos.get(indice);
     }
 
     private void mostrarGrupos(){
-        for(int x=0; x < esportesGrupos.get(indiceEsporte).getListaGrupos().size(); x++)
-            adicionarItemCb(comboBoxes.get(x), x);
+        for(int x=0; x < retornarEsporte(indiceEsporte).getGrupos().size(); x++)
+            adicionarGrupos(gruposLabel.get(x), x);
     }
 
-    private void adicionarItemCb(JComboBox cb, int x){
-        for(int index=0; index < grupo(x).size(); index++)
-            cb.addItem(grupo(x).get(index).toString());
+    private void adicionarGrupos(JLabel label, int x){
+        String grupo = retornarGrupo(x).toString().replace("[", "").replace("]", "");
+        label.setText(grupo);
     }
 
-    private void resetarItens(){
-        for (JComboBox comboBox : comboBoxes) comboBox.removeAllItems();
+    private void resetarGrupos(){
+        for (JLabel jLabel : gruposLabel) jLabel.setText("");
     }
 
-    private void removerEsporte(){
+    private void removerEsportesVazios(){
         List<Grupo> esportesVazios = new ArrayList<>(3);
         List<String> lbEsportesVazios = new ArrayList<>(3);
         for (int x =0; x < esportesGrupos.size(); x++) {
-            if (esportesGrupos.get(x).getListaGrupos().get(0).size() == 0) {
+            boolean gruposVazios = retornarEsporte(x).getGrupos().equals(Collections.emptyList());
+            if (gruposVazios) {
                 esportesVazios.add(esportesGrupos.get(x));
                 lbEsportesVazios.add(esportesLabel.get(x));
             }
@@ -132,7 +152,7 @@ public class GruposController { //Classe que contem a parte logica da segudna te
                 indiceEsporte += 1;
 
             lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            resetarItens();
+            resetarGrupos();
             mostrarGrupos();
         }
     }
@@ -146,8 +166,15 @@ public class GruposController { //Classe que contem a parte logica da segudna te
                 indiceEsporte -= 1;
 
             lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            resetarItens();
+            resetarGrupos();
             mostrarGrupos();
+        }
+    }
+
+    public class BtnAlteracao implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            alteracao.showView();
         }
     }
 

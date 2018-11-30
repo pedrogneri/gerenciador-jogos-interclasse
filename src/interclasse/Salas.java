@@ -1,5 +1,8 @@
 package interclasse;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 public class Salas { // Classe que monta 1 ou 2 grupos com base nas salas selecionadas de cada ano (Ex. Primeiros)
     private List<String> salasParticipantes;
     private List<String> grupo1;
@@ -47,7 +50,7 @@ public class Salas { // Classe que monta 1 ou 2 grupos com base nas salas seleci
     }
 
     private void montarGrupo1(List<String> salas){
-        System.out.println(salas.size()); // OBS: somente para teste
+        System.out.println(salas.size()); // OBS: somente para testes
 
         if(salas.size() > 4) {
             Collections.shuffle(salas);

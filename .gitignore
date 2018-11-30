@@ -1,4 +1,9 @@
-.DS_STORE
-desktop.ini
+# IntelliJ IDEA
 out/
 *.iml
+.idea/
+
+# Mac e Windows
+.DS_STORE
+desktop.ini
+

@@ -1,14 +1,19 @@
 package view.home;
+// Classes
 import interclasse.Grupo;
 import interclasse.Salas;
-import view.alteracaoGrupo.AlteracaoGrupoController;
 import view.grupos.GruposController;
-
-import javax.swing.*;
-import java.awt.event.*;
+// View
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
 public class MainController { // Classe que contém a parte lógica da tela principal do programa (Home.form)
 //  Telas
     private Home home;
@@ -32,21 +37,29 @@ public class MainController { // Classe que contém a parte lógica da tela prin
 //  Salas
     private Salas primeiros = new Salas(), segundos = new Salas(), terceiros = new Salas();
 //  Grupos
-    public static Grupo futsal = new Grupo();
-    public static Grupo volei = new Grupo();
-    public static Grupo handebol = new Grupo();
-    public static Grupo basquete = new Grupo();
-//  List
-    private List<String> salasPrimeiros = new ArrayList<>(6);
-    private List<String> salasSegundos = new ArrayList<>(6);
-    private List<String> salasTerceiros = new ArrayList<>(6);
+    public static Grupo futsalMasc = new Grupo();
+    public static Grupo futsalFem = new Grupo();
+    public static Grupo voleiMasc = new Grupo();
+    public static Grupo voleiFem = new Grupo();
+    public static Grupo handebolMasc = new Grupo();
+    public static Grupo handebolFem = new Grupo();
+    public static Grupo basqueteMasc = new Grupo();
+    public static Grupo basqueteFem = new Grupo();
+//  List de participantes
+    private List<String> participantesPrimeiro = new ArrayList<>(6);
+    private List<String> participantesSegundo = new ArrayList<>(6);
+    private List<String> participantesTerceiro = new ArrayList<>(6);
+//  List de navegacao de esporte
     private List<String> esportesLabel = new ArrayList<>(4);
     private List<Grupo> esportesGrupos = new ArrayList<>(4);
 //  Index esportes
     private int indiceEsporte = 0;
 //  Esportes
-    private static final String lbFutsal = "Futsal", lbBasquete = "Basquete",
-        lbVolei = "Vôlei", lbHandebol = "Handebol";
+    private static final String
+        lbFutsalMasc = "Futsal Masc", lbFutsalFem = "Futsal Fem",
+        lbBasqueteMasc = "Basquete Masc", lbBasqueteFem = "Basquete Fem",
+        lbVoleiMasc = "Vôlei Masc", lbVoleiFem = "Vôlei Fem",
+        lbHandebolMasc = "Handebol Masc", lbHandebolFem = "Handebol Fem";
 
     public MainController() {
         initComponents();
@@ -75,15 +88,23 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         btnSelect3 = home.getBtnSelect3();
 
 //      Adicionar elementos aos lists de navegacao
-        esportesLabel.add(lbFutsal);
-        esportesLabel.add(lbBasquete);
-        esportesLabel.add(lbHandebol);
-        esportesLabel.add(lbVolei);
+        esportesLabel.add(lbFutsalMasc);
+        esportesLabel.add(lbFutsalFem);
+        esportesLabel.add(lbBasqueteMasc);
+        esportesLabel.add(lbBasqueteFem);
+        esportesLabel.add(lbHandebolMasc);
+        esportesLabel.add(lbHandebolFem);
+        esportesLabel.add(lbVoleiMasc);
+        esportesLabel.add(lbVoleiFem);
 
-        esportesGrupos.add(futsal);
-        esportesGrupos.add(basquete);
-        esportesGrupos.add(handebol);
-        esportesGrupos.add(volei);
+        esportesGrupos.add(futsalMasc);
+        esportesGrupos.add(futsalFem);
+        esportesGrupos.add(basqueteMasc);
+        esportesGrupos.add(basqueteFem);
+        esportesGrupos.add(handebolMasc);
+        esportesGrupos.add(handebolFem);
+        esportesGrupos.add(voleiMasc);
+        esportesGrupos.add(voleiFem);
     }
 
     private void initListeners() {
@@ -97,15 +118,6 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         btnClear1.addActionListener(new BtnLimparTodos());
         btnClear2.addActionListener(new BtnLimparTodos());
         btnClear3.addActionListener(new BtnLimparTodos());
-//      Checkbox
-        for(int x=0; x < panelPrimeiros.getComponentCount(); x++) {
-            JCheckBox cbPrimeiros = (JCheckBox) panelPrimeiros.getComponent(x);
-            JCheckBox cbSegundos = (JCheckBox) panelSegundos.getComponent(x);
-            JCheckBox cbTerceiros = (JCheckBox) panelTerceiros.getComponent(x);
-            cbPrimeiros.addItemListener(new CbPrimeirosListener());
-            cbSegundos.addItemListener(new CbSegundosListener());
-            cbTerceiros.addItemListener(new CbTerceirosListener());
-        }
     }
 
 //  Métodos
@@ -121,12 +133,10 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
-    private void addSalasSelecionadas(JCheckBox cb, List<String> salas){
+    private void addSalaSelecionada(JCheckBox cb, List<String> salas){
         String sala = cb.getText();
         if(cb.isSelected())
             salas.add(sala);
-        else
-            salas.remove(sala);
     }
 
     private void limparSelects(){
@@ -134,9 +144,40 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         selecaoElementos(panelSegundos, false);
         selecaoElementos(panelTerceiros, false);
 //      Limpar listas volateis de salas participantes
-        salasPrimeiros.clear();
-        salasSegundos.clear();
-        salasTerceiros.clear();
+        participantesPrimeiro.clear();
+        participantesSegundo.clear();
+        participantesTerceiro.clear();
+    }
+
+    private void avancarEsporte(){
+        boolean ultimoEsporte = indiceEsporte == esportesLabel.size()-1;
+        if (ultimoEsporte)
+            indiceEsporte = 0;
+        else
+            indiceEsporte += 1;
+
+        alterarLabelEsporte();
+    }
+
+    private void retomarEsporte(){
+        boolean primeiroEsporte = indiceEsporte == 0;
+        if(primeiroEsporte)
+            indiceEsporte = esportesLabel.size()-1;
+        else
+            indiceEsporte -= 1;
+
+        alterarLabelEsporte();
+    }
+
+    private void coletarDadosCheckBox(JPanel panelCheckcBox, List<String> salas){
+        for(int x=0; x < panelCheckcBox.getComponentCount(); x++) {
+            JCheckBox cb = (JCheckBox) panelCheckcBox.getComponent(x);
+            addSalaSelecionada(cb, salas);
+        }
+    }
+
+    private void alterarLabelEsporte(){
+        lbEsporte.setText(esportesLabel.get(indiceEsporte));
     }
 
 //  Listeners
@@ -145,27 +186,19 @@ public class MainController { // Classe que contém a parte lógica da tela prin
     public class BtnNextListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            boolean ultimoEsporte = indiceEsporte == esportesLabel.size()-1;
-            if(ultimoEsporte)
-                indiceEsporte = 0;
-            else
-                indiceEsporte += 1;
-
-            lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            limparSelects();
+            if(!(esportesLabel.size() == 1)) {
+                avancarEsporte();
+                limparSelects();
+            }
         }
     }
     public class BtnPrevListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            boolean primeiroEsporte = indiceEsporte == 0;
-            if(primeiroEsporte)
-                indiceEsporte = esportesLabel.size()-1;
-            else
-                indiceEsporte -= 1;
-
-            lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            limparSelects();
+            if(!(esportesLabel.size() == 1)) {
+                retomarEsporte();
+                limparSelects();
+            }
         }
     }
 
@@ -195,44 +228,33 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
     }
 
-//  CheckBox Listeners
-    private class CbPrimeirosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasPrimeiros);
-        }
-    }
-    private class CbSegundosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasSegundos);
-        }
-    }
-    private class CbTerceirosListener implements ItemListener{
-        @Override
-        public void itemStateChanged(ItemEvent e) {
-            JCheckBox cb = (JCheckBox) e.getItemSelectable();
-            addSalasSelecionadas(cb, salasTerceiros);
-        }
-    }
-
 //  Botao salvar
     private class BtnSalvarListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            boolean gruposVazios = salasPrimeiros.size() == 0 && salasSegundos.size() == 0 && salasTerceiros.size() == 0;
+            home.setEnabled(false);
+
+            adicionarCheckBoxSelecionados();
+            boolean gruposVazios =
+                    participantesPrimeiro.size() == 0 && participantesSegundo.size() == 0 && participantesTerceiro.size() == 0;
             if(gruposVazios)
                 warningGruposVazios();
             else
                 salvar();
+
+            home.setEnabled(true);
+        }
+
+        private void adicionarCheckBoxSelecionados(){
+            coletarDadosCheckBox(panelPrimeiros, participantesPrimeiro);
+            coletarDadosCheckBox(panelSegundos, participantesSegundo);
+            coletarDadosCheckBox(panelTerceiros, participantesTerceiro);
         }
 
         private void salvar(){
             organizarTodosParticipantes();
             montarGrupos(esportesGrupos.get(indiceEsporte));
-            System.out.println(esportesGrupos.get(indiceEsporte).getListaGrupos()); // OBS: Somente para testes
+            System.out.println(esportesGrupos.get(indiceEsporte).getGrupos()); // OBS: Somente para testes
 
             prosseguirEsporte();
         }
@@ -244,7 +266,9 @@ public class MainController { // Classe que contém a parte lógica da tela prin
                     "Tem certeza de que deseja salvar o esporte vazio?", "ATENÇÃO!",
                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
                     opcoes, opcoes[0]);
-            if (opcaoEscolhida == 0)
+
+            boolean confirmar = opcaoEscolhida == 0;
+            if (confirmar)
                 salvar();
         }
 
@@ -255,14 +279,14 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
 
         private void organizarTodosParticipantes(){
-           organizarParticipantes(primeiros, salasPrimeiros);
-           organizarParticipantes(segundos, salasSegundos);
-           organizarParticipantes(terceiros, salasTerceiros);
+           organizarParticipantes(primeiros, participantesPrimeiro);
+           organizarParticipantes(segundos, participantesSegundo);
+           organizarParticipantes(terceiros, participantesTerceiro);
         }
 
 //      Método da classe grupo (gera os grupos)
-        private void montarGrupos(Grupo grupo) {
-            grupo.montarGrupos(primeiros, segundos, terceiros);
+        private void montarGrupos(Grupo grupoEsporte) {
+            grupoEsporte.montarArrayGrupos(primeiros, segundos, terceiros);
         }
 
 //      Métodos para avançar para o proximo esporte
@@ -272,18 +296,21 @@ public class MainController { // Classe que contém a parte lógica da tela prin
         }
 
         private void mudarEsporte(){
-            boolean semEsportes = esportesLabel.size() == 0;
-            boolean primeiroEsporte = indiceEsporte == 0;
-            if(semEsportes){
-                home.setVisible(false);
-                grupos.showView();
-            }else if(primeiroEsporte) {
-                indiceEsporte = esportesLabel.size()-1;
-                lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            } else {
-                indiceEsporte -= 1;
-                lbEsporte.setText(esportesLabel.get(indiceEsporte));
-            }
+            boolean todosGruposSalvos = esportesLabel.size() == 0;
+            if(todosGruposSalvos)
+                alterarTela();
+            else
+                retomarPrimeiroEsporte();
+        }
+
+        private void retomarPrimeiroEsporte(){
+            indiceEsporte = 0;
+            alterarLabelEsporte();
+        }
+
+        private void alterarTela(){
+            home.dispose();
+            grupos.inicializarView();
         }
 
         private void prosseguirEsporte(){

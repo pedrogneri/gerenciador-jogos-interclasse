@@ -9,15 +9,12 @@ public class Grupos extends JFrame{ // Classe que contem os componentes da segun
 //  Label
     private JLabel lbEsporte;
     private JLabel lbLogo;
-//  Panel
-    private JPanel panelGrupos;
-//  ComboBox
-    private JComboBox cbA;
-    private JComboBox cbB;
-    private JComboBox cbD;
-    private JComboBox cbC;
-    private JComboBox cbE;
-    private JComboBox cbF;
+    private JLabel lbA;
+    private JLabel lbB;
+    private JLabel lbC;
+    private JLabel lbD;
+    private JLabel lbE;
+    private JLabel lbF;
 
     public Grupos() {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -38,25 +35,22 @@ public class Grupos extends JFrame{ // Classe que contem os componentes da segun
     public JLabel getLbEsporte() {
         return lbEsporte;
     }
-    public JPanel getPanelGrupos() {
-        return panelGrupos;
+    public JLabel getLbA() {
+        return lbA;
     }
-    public JComboBox getCbA() {
-        return cbA;
+    public JLabel getLbB() {
+        return lbB;
     }
-    public JComboBox getCbB() {
-        return cbB;
+    public JLabel getLbC() {
+        return lbC;
     }
-    public JComboBox getCbD() {
-        return cbD;
+    public JLabel getLbD() {
+        return lbD;
     }
-    public JComboBox getCbC() {
-        return cbC;
+    public JLabel getLbE() {
+        return lbE;
     }
-    public JComboBox getCbE() {
-        return cbE;
-    }
-    public JComboBox getCbF() {
-        return cbF;
+    public JLabel getLbF() {
+        return lbF;
     }
 }

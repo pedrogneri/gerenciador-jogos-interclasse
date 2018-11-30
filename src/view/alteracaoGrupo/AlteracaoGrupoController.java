@@ -1,6 +1,7 @@
 package view.alteracaoGrupo;
 
 import interclasse.Grupo;
+import view.grupos.GruposController;
 import view.home.MainController;
 
 import javax.swing.*;
@@ -33,12 +34,10 @@ public class AlteracaoGrupoController {
         btnCancelar = alteracaoGrupo.getBtnCancelar();
     }
 
-    private void iniciarbIHO(Grupo esporte, List<String> grupo){
+    private void iniciarbIHO(Grupo esporte){
         List<List> gruposRestantes = new ArrayList<>(5);
-        gruposRestantes.add(esporte.getListaGrupos());
-        gruposRestantes.remove(grupo);
-
-
+        gruposRestantes.add(esporte.getGrupos());
+//        gruposRestantes.remove(grupo);
     }
 
     private void initListeners() {
