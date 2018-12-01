@@ -4,6 +4,7 @@ import view.alteracaoGrupo.AlteracaoGrupoController;
 import view.home.MainController;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ public class GruposController { //Classe que contem a parte logica da segudna te
 
 //  Telas
     private Grupos grupos;
-    private AlteracaoGrupoController alteracao;
 //  Button
     private JButton btnNext;
     private JButton btnPrev;
@@ -50,7 +50,6 @@ public class GruposController { //Classe que contem a parte logica da segudna te
 
     private void initComponents() {
         grupos = new Grupos();
-        alteracao = new AlteracaoGrupoController();
 
         btnNext = grupos.getBtnNext();
         btnPrev = grupos.getBtnPrev();
@@ -102,6 +101,7 @@ public class GruposController { //Classe que contem a parte logica da segudna te
     public void inicializarView(){
         removerEsportesVazios();
         lbEsporte.setText(esportesLabel.get(indiceEsporte));
+        resetarGrupos();
         mostrarGrupos();
         showView();
     }
@@ -121,10 +121,14 @@ public class GruposController { //Classe que contem a parte logica da segudna te
     private void adicionarGrupos(JLabel label, int x){
         String grupo = retornarGrupo(x).toString().replace("[", "").replace("]", "");
         label.setText(grupo);
+        label.setForeground(Color.BLACK);
     }
 
     private void resetarGrupos(){
-        for (JLabel jLabel : gruposLabel) jLabel.setText("");
+        for (JLabel label : gruposLabel) {
+            label.setText("Grupo Vazio");
+            label.setForeground(Color.RED);
+        }
     }
 
     private void removerEsportesVazios(){
@@ -168,13 +172,6 @@ public class GruposController { //Classe que contem a parte logica da segudna te
             lbEsporte.setText(esportesLabel.get(indiceEsporte));
             resetarGrupos();
             mostrarGrupos();
-        }
-    }
-
-    public class BtnAlteracao implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            alteracao.showView();
         }
     }
 

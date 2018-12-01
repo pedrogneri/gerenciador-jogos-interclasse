@@ -7,17 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="892d18e3-bd6b-4a35-bb78-7db02a4dc807" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interclasse/Salas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interclasse/Salas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/grupos/Grupos.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/Grupos.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/grupos/Grupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/Grupos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/grupos/GruposController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/grupos/GruposController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/home/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/Home.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/home/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/home/Home.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,48 +23,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="100" column="33" lean-forward="true" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+            <state relative-caret-position="-1902">
+              <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/src/view/home/Home.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="663">
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="e#1168#1169#0" expanded="true" />
-                <element signature="e#1215#1216#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/grupos/GruposController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="123" column="5" lean-forward="true" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-              <folding>
-                <element signature="e#3871#3872#0" expanded="true" />
-                <element signature="e#3939#3940#0" expanded="true" />
-                <element signature="e#5275#5276#0" expanded="true" />
-                <element signature="e#5319#5320#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1740">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="180">
+                <caret line="12" selection-start-line="12" selection-end-line="12" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -77,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="23" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -116,7 +104,6 @@
         <option value="$PROJECT_DIR$/src/view/GruposController.java" />
         <option value="$PROJECT_DIR$/src/view/MainController.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Time.java" />
-        <option value="$PROJECT_DIR$/src/view/home/Home.java" />
         <option value="$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupo.java" />
         <option value="$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupo.form" />
         <option value="$PROJECT_DIR$/src/interclasse/Grupo.java" />
@@ -125,12 +112,14 @@
         <option value="$PROJECT_DIR$/src/conexao/Conexao.java" />
         <option value="$PROJECT_DIR$/src/interclasse/Main.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/view/home/MainController.java" />
         <option value="$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupoController.java" />
         <option value="$PROJECT_DIR$/src/view/grupos/Grupos.java" />
         <option value="$PROJECT_DIR$/src/view/grupos/Grupos.form" />
-        <option value="$PROJECT_DIR$/src/view/home/Home.form" />
         <option value="$PROJECT_DIR$/src/view/grupos/GruposController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/view/home/Home.form" />
+        <option value="$PROJECT_DIR$/src/view/home/Home.java" />
+        <option value="$PROJECT_DIR$/src/view/home/MainController.java" />
       </list>
     </option>
   </component>
@@ -159,10 +148,59 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="conexao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="interclasse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="grupos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -207,18 +245,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Interclasse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Interclasse" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,7 +257,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="163" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="215" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543327884081" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543671410966" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -301,7 +327,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49612403" weight="0.18454936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49612403" visible="true" weight="0.19384836" />
       <window_info id="Structure" order="1" sideWeight="0.503876" side_tool="true" weight="0.16595136" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -310,7 +336,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34698796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -419,13 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/home/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alo.java" />
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
@@ -474,16 +493,6 @@
     <entry file="file://$PROJECT_DIR$/Interclasse.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="75" lean-forward="true" selection-start-line="3" selection-start-column="75" selection-end-line="3" selection-end-column="75" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interclasse/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -498,17 +507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="100" column="33" lean-forward="true" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/alteracaoGrupo/AlteracaoGrupoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#1168#1169#0" expanded="true" />
             <element signature="e#1215#1216#0" expanded="true" />
@@ -516,29 +518,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/home/Home.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="16" selection-end-column="23" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="12" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/grupos/GruposController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="123" column="5" lean-forward="true" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-          <folding>
-            <element signature="e#3871#3872#0" expanded="true" />
-            <element signature="e#3939#3940#0" expanded="true" />
-            <element signature="e#5275#5276#0" expanded="true" />
-            <element signature="e#5319#5320#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1740">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/grupos/Grupos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/home/Home.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/home/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/home/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1902">
+          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
         </state>
       </provider>
     </entry>
