@@ -103,7 +103,7 @@
                             </constraints>
                             <properties>
                               <font size="26"/>
-                              <text value="1ETIM"/>
+                              <text value="1ETINF"/>
                             </properties>
                           </component>
                         </children>
@@ -220,7 +220,7 @@
                             </constraints>
                             <properties>
                               <font size="26"/>
-                              <text value="2ETIM"/>
+                              <text value="2ETINF"/>
                             </properties>
                           </component>
                         </children>
@@ -336,7 +336,7 @@
                             </constraints>
                             <properties>
                               <font size="26"/>
-                              <text value="3ETIM"/>
+                              <text value="3ETINF"/>
                             </properties>
                           </component>
                         </children>

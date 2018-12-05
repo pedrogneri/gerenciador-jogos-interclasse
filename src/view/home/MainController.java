@@ -256,6 +256,7 @@ public class MainController { // Classe que contém a parte lógica da tela prin
             montarGrupos(esportesGrupos.get(indiceEsporte));
             System.out.println(esportesGrupos.get(indiceEsporte).getGrupos()); // OBS: Somente para testes
 
+            esportesGrupos.get(indiceEsporte).mostrarChaves();
             prosseguirEsporte();
         }
 
